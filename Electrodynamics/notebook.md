@@ -1,7 +1,7 @@
 # This is my (humble) attempt to digitally recreate the notes of Hamilton College professor Kate Brown.
 
 ## Prof. Brown encouraged us to keep a notebook "as a record of our leraning". 
-So strongly, in fact, that it was worth 25% of our grades. As such, this is the neatest documentation of physics I've ever done. I'm documenting it here on GitHub to hold myself accountable as part of studying for the qualification exam. 
+So strongly, in fact, that it was worth 25% of our grades. As such, this is the neatest documentation of physics I've ever done. I'm committing it here on GitHub to hold myself accountable, as part of studying for my qualification exam. 
 
 # (Basically) The Greatest Story Ever Told
 ## (at least according to KB)
@@ -144,7 +144,7 @@ $ is a wave if $c^2 = \frac{1}{\mu_0 \varepsilon_0}$
 
 and $\mathbf E$ obeys the wave equation for waves travelling at speed $c = \frac{1}{\sqrt{\mu_0\varepsilon_0}}$.
 
-Similarly, $$\mathbf \nabla \times (\mathbf\nabla \times \mathbf B)= \nabla (\mathbf \nabla \cdot \mathbf E) - \nabla ^2 \mathbf B$$ 
+Similarly, $$\mathbf \nabla \times (\mathbf\nabla \times \mathbf B)= \mathbf \nabla (\mathbf \nabla \cdot \mathbf E) - \nabla ^2 \mathbf B$$ 
 
 $$
 \mathbf \nabla \times \left(\mu_0 \varepsilon_0 \frac{\partial \mathbf B}{\partial t}\right) = 0 - \nabla^2 \mathbf B
@@ -159,3 +159,96 @@ $$
 $$ \boxed{\mu_0 \varepsilon_0 \frac{\partial^2 \mathbf B}{\partial t^2} = \nabla^2 \mathbf B} = \frac{\partial ^2 \mathbf B}{\partial x^2} + \frac{\partial ^2 \mathbf B}{\partial y^2} + \frac{\partial ^2 \mathbf B}{\partial z^2}$$
 
 is a wave eqution for $\mathbf B$ with waves travelling at $c = \frac{1}{\sqrt{\mu_0 \varepsilon_0}}$.
+
+Therefore, both $\mathbf E$ and $\mathbf B$ are waves that travel at $c$. Light consists in the "transverse undulations" in the same medium[^1] that causes electromagnetic phenomena. 
+[^1]: Although there is no medium, but that's another story...
+# Fundamental Theorems
+
+Today we cover:
+
+* Maxwell's Equations in Integral/Differential Form
+* Fundamental Theorems
+
+But ... we must also establish:
+
+
+- $\mathbf r, \mathbf r', \mathcal{r}$
+- $\delta_{ij}$                        
+- $\text{point charge physics}$          
+
+Which is all part of **Ch. 1 of Griffiths**. 
+
+(Note: $\mathcal{r}$ is gonna have to cut it as Griffith's "script r", cause I can't render it in GFM. Maybe I'll switch to jupyter notebook...stay tuned.)
+
+Anyway:
+
+$$\mathbf \nabla \cdot \mathbf E = \rho / \varepsilon_0 \iff \oint \mathbf E \cdot d \mathbf a = \frac{q_{\text{enclosed}}}{\varepsilon_0}$$
+
+$$\mathbf \nabla \times \mathbf E = -\frac{\partial \mathbf B}{\partial t} \iff \oint \mathbf E \cdot d \mathbf l = -\frac{\partial \Phi_{B}}{\partial t}$$
+
+$$\mathbf \nabla \cdot \mathbf B = 0 \iff \oint \mathbf B \cdot d \mathbf a = 0$$
+
+$$\mathbf \nabla \times \mathbf B = \mu_0 \mathbf J+\mu_0 \varepsilon_0 \frac{\partial \mathbf E}{\partial t} \iff \oint \mathbf B \cdot d \mathbf l = \mu_0 I_{\text{enclosed}} + \mu_0 \varepsilon_0 \frac{\partial \Phi_B}{\partial t}$$
+
+"If you graduate knowing this and the fundamental theorems, that's not thing". 
+
+<u>Recall</u>: Fundamental theorem of calculus for *univariate*:
+
+$$
+\int_a^b \frac{df}{dx} = f(b) - f(a)
+$$
+
+"Integral of a derivative over some region equals to the function **itself** evaluated on the boundary of said region. 
+
+Goal: go from 1D to 3D:
+
+$$\text{derivative} \longleftrightarrow \text{gradient operator} \mathbf \nabla $$
+
+(Contains partial derivatives: $\mathbf \nabla f$, $\mathbf \nabla \cdot f$, $\mathbf \nabla \times f$.)
+
+In English: you can onlu do three things with $\mathbf \nabla$: gradient, divergence, and curl. 
+
+There is a fundamental theorem for each operation! And they all have the same structure as the fundamental theorem of calculus:
+
+1. Fundamental Theorem of Gradients (or, Fundamental Theorem of Vector Calculus)
+
+$$
+\boxed{\int_{\mathcal a}^{\mathcal b} \mathbf \nabla f \cdot d \mathbf l = f(b) - f(a)}
+$$
+
+"Integral of a derivative is equal to the difference of the function values at the boundary"
+
+2. Fundamental theorem of Divergences (or, Gauss's Law / The Divergence Theorem)
+
+Imagine a field, all div no curl, w/ volume $V$ and surface $S$:
+
+$$
+\boxed{\int_V \left(\mathbf \nabla \cdot \mathbf f \right)d \tau = \int_S \mathbf f \cdot da}
+$$
+
+**Again**: "integral of derivative over some region evaluated on boundary of some region."
+
+Another way to fphrase this: `divergence` of a field through a volme `equals` the flux of a field through the surface. 
+
+3. Fundamental theorem of Curl (Stokes' Theorem)
+
+For path $P$ and a surface $S$
+
+$$\boxed{
+\int_S \left(\mathbf \nabla \times \mathbf f \right) \cdot d \mathbf a = \int_P \mathbf f \cdot d \mathbf l
+}
+$$
+
+"integral of a derivative over some region..."
+
+Ex: Start with Maxwell's Equations in differential form, and get to integral form:
+
+If we apply $\left(\mathbf \nabla \cdot \mathbf E = \rho/\varepsilon_0 \right)$ using the divergence theorem:
+
+$$
+\int\limits_{{\text{volume} \,V }} \left(\mathbf \nabla \cdot \mathbf E\right) d\tau = \int\limits_{\text{volume} \,V } \rho/\varepsilon_0\, d\tau
+$$
+
+$$
+\int\limits_{{\text{surface} \,S }} \left(\mathbf E \cdot d \mathbf a\right) d\tau =  \frac{q_{\text{enclosed}}}{\varepsilon_0}.
+$$
