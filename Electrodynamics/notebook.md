@@ -190,7 +190,7 @@ $$\mathbf \nabla \cdot \mathbf B = 0 \iff \oint \mathbf B \cdot d \mathbf a = 0$
 
 $$\mathbf \nabla \times \mathbf B = \mu_0 \mathbf J+\mu_0 \varepsilon_0 \frac{\partial \mathbf E}{\partial t} \iff \oint \mathbf B \cdot d \mathbf l = \mu_0 I_{\text{enclosed}} + \mu_0 \varepsilon_0 \frac{\partial \Phi_B}{\partial t}$$
 
-"If you graduate knowing this and the fundamental theorems, that's not thing". 
+"If you graduate knowing this and the fundamental theorems, that's not nothing". 
 
 <u>Recall</u>: Fundamental theorem of calculus for *univariate*:
 
