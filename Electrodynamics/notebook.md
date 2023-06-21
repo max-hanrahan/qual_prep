@@ -252,3 +252,122 @@ $$
 $$
 \int\limits_{{\text{surface} \,S }} \left(\mathbf E \cdot d \mathbf a\right) d\tau =  \frac{q_{\text{enclosed}}}{\varepsilon_0}.
 $$
+
+
+# 9/7/21:
+
+A note on notebooks: actively read the book and fill in the missing steps. 
+
+* Will not dock if you have scratchwork (as long as you have a big X)
+
+Is your writing neat, have you filled in gaps?
+
+## We are fully in Griffths Material now!
+
+Today we revisit the Dirac-Delta function (DDF). 
+
+Agenda:
+
+* 1D DDF
+    * def
+    * neat properties
+* 3D DDF
+    * def
+    * neat properties
+    * Divergence field: a $\bot$! (contradiction!) and resolution. 
+
+    Now: 1D DDF is defined like so:
+
+$$
+\delta(x) = \left\{
+                \begin{array}{ll}
+                  0, x \neq 0\\
+                  \infty, x = 0
+                \end{array}
+                \right.
+$$
+
+such that $\int\limits_{-\infty}^{\infty} \delta(x)dx = 1$.
+
+Noteworthy properties:
+
+1. $\int\limits_{-\infty}^{\infty} f(x)\delta(x)dx = f(0)$
+
+
+DDF selects the one value wher DDF is non-zero on $f(x)$. 
+
+2. if $\delta(x-a)$ is defined as
+
+$$
+\delta(x-a) = \left\{
+    \begin{array}{ll}
+    0, x \neq 0 \\
+    \infty, x = a
+    \end{array}
+    \right.
+$$
+and $\int\limits_\infty^\infty f(x)\delta(x)dx = 1$, then (1.) still holds. 
+
+This is AKA the **shifting property**:
+
+$$
+\int\limits_\infty^\infty f(x)\delta(x-a) dx = f(a)
+$$
+
+Now we will generalize to 3D:
+
+## Generalization to 3D DDF:
+
+$$
+\bf {Def:} \quad \delta^3(x) = \left\{
+    \begin{array}{ll}
+    0, \quad (x, y, z) \neq (0, 0, 0) \\
+    \infty, \quad (x, y, z) = (0, 0, 0)
+    \end{array}
+    \right.
+$$
+
+such that $\int \delta^3(\vec r)d\tau = 1$ over all 3d space. 
+
+Other notations of which one should generally be aware:
+
+$\delta^3(\vec r) = \delta(x) \delta(y) \delta(z)$
+
+$\delta^3(\vec r) d^3 \vec r = 1$
+
+$\int \limits_{\text{All Space}}\delta^3 (\vec r) d \vec r = 1$
+
+$\int \int \int \delta(x) \delta (y) \delta (z) dx dy dz$
+
+The two properties discussed above still hold!
+
+1. 
+$$\boxed{
+\int\limits_{\text{All Space}} f(\vec r)\delta^3(\vec r)d\tau = f(0, 0, 0)
+}
+\newline \text{The "SELECT-OUT" property}. 
+
+$$
+
+2. 
+$$ \text{If} \quad
+\delta^3(\vec r - \vec a) = 
+    \left\{
+    \begin{array}{ll}
+    0, \quad \vec r \neq \vec a \\
+    \infty, \quad\vec r  = \vec a
+    \end{array}
+    \right.
+
+    \ni \int \limits_{\text{All Space}}\delta^3 (\vec r - \vec a) d \tau = 1, \quad \text{then}
+$$
+
+$$\boxed{
+\int\limits_{\text{All Space}} f(\vec r)\delta^3(\vec r - \vec a)d\tau = f(\vec a)
+}
+\newline \text{SHIFT property}
+$$
+
+
+# HENCEFORTH, this pure-markdown notebook will only be for scratch. 
+The real notebook is the jupyter one. 
